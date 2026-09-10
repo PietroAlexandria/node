@@ -9,7 +9,7 @@ exports.buscarPorId = (req, res) => {
     const produto = service.buscarPorId(req.params.id);
 
     if (!produto) {
-        res.status(404).json({ mensagem: "Produto não encontrado" });
+        return res.status(404).json({ mensagem: "Produto não encontrado" });
     }
 
     res.status(200).json(produto);
