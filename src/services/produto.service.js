@@ -1,11 +1,14 @@
-const produtos = [
-    {id: 1, nome: "Notebook", preco: 3000},
-    {id: 2, nome: "Mouse", preco: 90}
-]
-
 const Produto = require("../models/produto.model");
 
+const produtos = [
+    new Produto ({id: 1, nome: "Notebook", preco: 3000}),
+    new Produto ({id: 2, nome: "Mouse", preco: 90})
+]
+
 function listar() {
+    produtos.forEach(p => {
+        console.log(`${p.nome} (R$${p.preco}) - em promoção? ${p.estaEmPromocao()}`);
+    });
     return produtos;
 }
 
