@@ -7,9 +7,9 @@ export interface ProdutoDados {
 }
 
 class Produto extends Model {
-    public id!: number;
-    public nome!: string;
-    public preco!: number;
+    public declare id: number;
+    public declare nome: string;
+    public declare preco: number;
 
     // Métodos de instância também podem ser adicionados no Sequelize
     public estaEmPromocao(): boolean {

@@ -28,7 +28,7 @@ async function criarLote(dadosArray: ProdutoDados[]): Promise<Produto[]> {
     }
 
     // O Sequelize faz a validação e insere tudo de uma vez
-    const produtos = await Produto.bulkCreate(dadosArray);
+    const produtos = await Produto.bulkCreate(dadosArray as any[]);
     return produtos;
 }
 
